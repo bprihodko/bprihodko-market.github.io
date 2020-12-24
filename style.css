@@ -8,6 +8,9 @@ body {
 .header {
     padding: 25px 0;
     background-color: #1d2126;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .container {
     max-width: 1160px;
@@ -19,21 +22,36 @@ body {
     margin-left: -15px;
     margin-right: -15px; 
     display:flex;
+    flex-wrap: wrap;
 }
-
 [class*="col-"] {
     display: flex;
     padding-right: 15px;
     padding-left: 15px;
 }
 .col-md-2 {
-    width: 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
 }
-.col-md-12 {
-    width: 100%;
+.col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.col-md-5 {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+}
+.col-md-7 {
+   flex: 0 0 58.333333%;
+   max-width: 58.333333%;
 }
 .col-md-8 {
-    width: 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+.col-md-12 {
+   flex: 0 0 100%;
+   max-width: 100%;
 }
 
 .Logo {
@@ -42,7 +60,6 @@ body {
 nav {
     margin: 0 auto;
     display: flex;
-  
 }
 .menu  {
    display: flex;
@@ -87,7 +104,6 @@ nav {
     color: #a4aead;
     padding-left: 10px;
 }
-
 .loupe {
     background-image: url(image/loupe.png);
     background-repeat: no-repeat;
@@ -114,9 +130,10 @@ background-repeat: no-repeat;
     margin-bottom: 25px;
 }
 .description {
-    color: #cacbcc;
+    color: #a4a5a8;
     font-size: 16px;
     line-height: 26px;
+     margin-bottom: 40px;
 }
 .button-view {
      font-size: 14px; 
@@ -127,28 +144,183 @@ background-repeat: no-repeat;
      border: 1px solid #ffff ;
      border-radius: 3px;
      margin-right: 10px;
-     margin-top: 40px;
      cursor: pointer;
-
 }
 .button-view:hover {
     background: #23b7a4;
     border: none;
 }
+.team {
+    border-top: 1px solid #e1e6ea;
+}
+.title-black {
+   font-family: 'Quattrocento Sans', sans-serif;
+   font-size: 36px; 
+   font-weight: bold;
+   border-left: 10px solid #e1e6ea;
+   padding-left: 15px;
+   margin-top: 80px;
+   margin-bottom: 60px;
+}
+.title-modest {
+   font-family: 'Quattrocento Sans', sans-serif;
+   color: #62666c;
+   font-size: 18px; 
+   font-weight: bold;
+   margin-bottom: 20px;
+}
+
+.cub {
+    width: 50px;
+    height: 50px;
+    background: #23b7a4;
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: 20px;
+    padding: 15px;
+    margin-right: 20px;
+}
+
+.features {
+    display: flex;
+}
+.icon {
+    width: 60px;
+    height: 60px;
+    background-color: #c8cdd0;
+    margin-right: 1px;
+    background-position: center;
+}
+.member .icon {
+    background-color: #3a454d;
+}
+ .social-network-item {
+     display: flex;
+     margin-top: 15px;
+ }
+.facebook {
+    background-image: url(image/facebook.png);
+}
+.twitter {
+    background-image: url(image/twitter.png);
+}
+.google {
+    background-image: url(image/g.png);
+}
+.earth {
+    background-image: url(image/earth.png);
+}
+.be {
+    background-image: url(image/Be.png);
+}
+.linkedin {
+    background-image: url(image/in.png);
+}
+.photo {
+    position: relative;
+}
+.name {
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: 16px;
+    color: #5a6066;
+    margin-bottom: 10px;
+}
+.position {
+    font-size: 16px;
+    color: #989b9e;
+    font-weight: 500;
+}
+.member-description {
+    padding: 20px 20px;
+    background-color: #e1e6ea;  
+}
+.social-network {
+  position: absolute;
+  top: 106px;
+  right: 38px;
+}
+.network {
+     display: none; 
+}
+.member:hover .photo img {
+    opacity: 0.4;
+}
+.member:hover .member-description {
+   background-color: #3a454d;
+}
+.member:hover .name {
+    color: #989b9e;
+}
+.member:hover .network {
+    display: flex;
+}
+
+.member:hover .social-network .icon:hover {
+    background-color:#4e5a62;
+   cursor: pointer;
+}
 
 
-@media(max-width:425px) {
-    .col-xs-12 {
-   width: 100%;
-  }
+
+
+
+
+
+
+@media(max-width:768px) {
+    .container {
+        max-width: 720px;
+    }
    .row {
       display: block;
   }
-  nav {
+    nav {
     overflow-x: scroll;
     padding: 20px 0px;
 }
-.banner-box {
+.col-sm-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    justify-content: center;
+    margin: 10px;
+}
+    .banner-box {
     margin: 50px 0px;
 }
+.title-black {
+    margin-bottom: 20px;
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+@media(min-width:992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media(min-width:1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}*/
