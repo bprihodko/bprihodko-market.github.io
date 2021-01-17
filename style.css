@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 body {
+    position: relative;
     font-family: 'Open Sans', sans-serif;
 
 }
@@ -28,6 +29,7 @@ body {
     display: flex;
     padding-right: 15px;
     padding-left: 15px;
+    flex-wrap: wrap;
 }
 .col-lg-2 {
     flex: 0 0 16.666667%;
@@ -394,7 +396,7 @@ background-repeat: no-repeat;
     overflow: hidden;
 }
 .contact-map {
-    margin-top: 345px;
+    margin-top: 300px;
 }
 
 .contact-section {
@@ -433,8 +435,15 @@ label {
     position: absolute;
     bottom: 166px;
     background-color: white;
-    padding: 0px 30px;
+    padding: 10px 30px;
+    z-index: 9999;
+
 }
+
+.hidden-form{
+   display: none;
+}
+
 
 .textarea {
     background-color: #eaeef1;
@@ -444,6 +453,7 @@ label {
     width: 100%;
 
 }
+    
  .submit {
     background-color: #23b7a4;
     font-family: 'Quattrocento Sans', sans-serif;
@@ -481,6 +491,83 @@ label {
     width: 100%;
 }
 
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: none;
+}
+.modal-block {
+    width: 300px;
+    margin: 80px auto;
+    height: 200px;
+    border: 1px solid grey;
+    background-color: white;
+    padding: 15px;
+}
+.btn-close {
+text-align: right;
+margin-top: 25px;
+}
+
+.form-fields input {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+border: 1px solid grey;
+}
+.form-fields {
+    margin: 10px 0;
+}
+.modal-block button {
+     padding: 5px;
+border: 1px solid grey;
+}
+
+.hide {
+    display: none;
+}
+.show {
+    display: block !important;
+}
+.open-form {
+    width: 128px;
+    height: 53px;
+    background-color: #7c858b;
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: 14px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    margin-top: 227px;
+    margin-left: 29px; 
+ }
+
+ .overlay {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    background: black;
+    z-index: 10;
+    left: 0px;
+    right: 0px;
+    opacity: 0.5;
+ }
+ 
+
+
+
+
+
 @media(max-width:992px) {
     .col-md-6 {
     flex: 0 0 50%;
@@ -498,6 +585,10 @@ label {
     position: unset;
     bottom: unset;
 }
+.open-form {
+    margin-top: 52px;
+    margin-left: -2px;
+}
 }
 
 
@@ -506,21 +597,35 @@ label {
         max-width: 720px;
     }
    .row {
-      display: block;
+    flex-direction: column;
   }
   .header {
-      padding: 5px 0;
+      padding: 15px 0;
   }
-    nav {
-    overflow-x: scroll;
-    padding: 20px 0px;
+   .menu  {
+   display: block; 
+   text-align: center;
+   overflow: scroll;
+}
+.menu li {
+    margin: 20px 0;
+}
+.col-sm-2 {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+}
+
+.col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
 }
 .col-sm-12 {
     flex: 0 0 100%;
     max-width: 100%;
     justify-content: center;
-    margin: 10px;
+    margin: 10px 0;
 }
+
     .banner-box {
     margin: 50px 0px;
 }
@@ -547,9 +652,74 @@ label {
 .contact {
     padding-bottom: 20px;
 }
+.nav-mobile-menu {
+    position: relative;
+    width: 15px;
+    height: 15px;
+}
+.nav-mobile-menu span {
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transition: .25s ease-in-out ;
+}
+.nav-mobile-menu span:nth-child(1) {
+    top: 3px;
+}
+    
+.nav-mobile-menu span:nth-child(2) {
+    top: 7px;
+    
+}
+.nav-mobile-menu span:nth-child(3) {
+    bottom: 3px;
 }
 
+.hidden-menu {
+    opacity: 0;
+    visibility: hidden;
+}
+.navigation {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 280px;
+    max-width: 280px;
+    transition: all 250ms ease-in-out ;
+    transform: translateX(150%);
+}
+.header-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-mobile-menu.active-menu span:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+}
+.nav-mobile-menu.active-menu span:nth-child(2) {
+    top: 50%;
+    transform: rotate(-45deg);
+}
+.nav-mobile-menu.active-menu span:nth-child(3) {
+    transform: scale(0);
+}
+.navigation.active-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    top: 40px;
+    background-color: #1d2126;
+}
+.open-form {
+    margin-top: 66px;
+    margin-left: -2px;
+}
 
+}
 
 
 

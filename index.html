@@ -16,15 +16,14 @@
 <body>
   <header class="header">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-2 col-sm-12">
+      <div class="row header-row">
+        <div class="col-lg-2 col-md-2 col-sm-6 ">
           <div class="Logo">
             <a href=""><img src="image/modest.png"></a>
           </div>
         </div>
-        <div class="col-lg-8 col-sm-12">
-          <nav>
-            <ul class="menu">
+        <div class="col-lg-8 col-md-8 col-sm-2">
+            <ul class="menu navigation hidden-menu">
               <li><a href="">Ноme</a></li>
               <li><a href="">About</a></li>
               <li><a href="">Work</a></li>
@@ -33,9 +32,13 @@
               <li><a href="">Features</a></li>
               <li><a href="">Contact</a></li>
             </ul>
-          </nav>
+            <div class="nav-mobile-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
         </div>
-        <div class="col-lg-2 col-sm-12">
+        <div class="col-lg-2 col-md-2 search">
           <form class="search">
             <input class="search-text" type="text" placeholder="SEARCH">
             <div class="loupe"></div>
@@ -404,12 +407,12 @@
             </div>
           </div>
           <div class="col-lg-6 col-sm-12">
-            <form class="contact-form" >
+            <form action="" class="contact-form hidden-form" >
+                <div class="btn-close">X</div>
               <div class="row">
                 <div class="col-lg-6 d-block">
                   <label for="t1">YOUR NAME</label>
                   <input class="text" type="text" placeholder="" id="t1">
-
                 </div>
                 <div class="col-lg-6 d-block">
                   <label for="t2">YOUR EMAIL</label>
@@ -428,7 +431,7 @@
                 </div>
               </div>
             </form>
-
+            <button class="open-form">OPEN FORM</button>
           </div>
         </div>
       </div>
@@ -455,6 +458,20 @@
       </div>
     </div>
   </footer>
-</body>
+  <div class="overlay">
+  </div>
+  <!--<div class="modal">
+    <div class="modal-block">
+      <form action="">
+        <div class="btn-close">X</div>
+        <h3>Please call for more details</h3>
+        <div class="form-fields"><input type="text" placeholder="Your name"></div>
+        <div class="form-fields"><input type="text" placeholder="Your name"></div>
+        <button>Please call</button>
+      </form>
+    </div>
+  </div>-->
 
+  <script src="app.js"></script>
+</body>
 </html>
